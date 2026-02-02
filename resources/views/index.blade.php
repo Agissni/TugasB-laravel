@@ -109,9 +109,6 @@
                 </p>
                 <p class="text-gray-500 italic">"Kualitas dan rasa adalah prioritas utama kami."</p>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <img src="logo_kue.jpeg" class="rounded-3xl shadow-2xl max-w-sm border-8 border-orange-50" alt="Logo">
-            </div>
         </div>
     </section>
 
