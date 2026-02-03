@@ -10,7 +10,7 @@
             {{-- 2. Ganti text-pink-600 jadi text-amber-900 (Cokelat Tua Mewah) --}}
             <h2 class="text-2xl font-bold text-center text-amber-900 mb-6">Form Pemesanan</h2>
             
-            <form action="{{ url('/pesan') }}" method="POST" class="space-y-4">
+            <form action="{{ route('pesanan.store') }}" method="POST" class="space-y-4">
                 @csrf
                 <input type="text" name="nama_customer" placeholder="Nama Anda" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" required>
                 
