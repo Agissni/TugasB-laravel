@@ -12,8 +12,11 @@ class TokokueSeeder extends Seeder
      */
     public function run(): void
     {
-        // Insert contoh produk — insertOrIgnore supaya idempotent
-        DB::table('tokokue')->insertOrIgnore([
+        // Hapus data lama terlebih dahulu
+        DB::table('tokokue')->truncate();
+        
+        // Insert contoh produk
+        DB::table('tokokue')->insert([
             [
                 'kategori_id' => 1,
                 'nama' => 'Kue Nastar',
