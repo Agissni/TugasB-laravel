@@ -8,7 +8,7 @@
             {{-- Judul Cokelat Tua --}}
             <h2 class="text-2xl font-bold text-amber-900 mb-6">Edit Pesanan</h2>
             
-            <form action="{{ route('pesanan.update', $pesanan->id_pesanan) }}" method="POST" class="space-y-5">
+            <form action="{{ route('pesanan.update', $pesanan->id) }}" method="POST" class="space-y-5">
                 @csrf
                 @method('PUT')
 
@@ -21,8 +21,8 @@
                     <label class="block text-sm font-semibold text-gray-700 mb-1">Kue Pilihan</label>
                     <select name="kue_pilihan" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
                         @foreach($daftarKue as $k)
-                            <option value="{{ $k->nama }}" {{ $pesanan->kue_pilihan == $k->nama ? 'selected' : '' }}>
-                                {{ $k->nama }}
+                            <option value="{{ $k->nama_kue }}" {{ $pesanan->kue_pilihan == $k->nama_kue ? 'selected' : '' }}>
+                                {{ $k->nama_kue }}
                             </option>
                         @endforeach
                     </select>

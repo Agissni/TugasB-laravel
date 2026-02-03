@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class PesananController extends Controller
 {
+    // Dashboard dilindungi via route middleware (lihat routes/web.php)
+
     // Menampilkan daftar pesanan (Read)
     public function index()
 {
@@ -16,6 +18,15 @@ class PesananController extends Controller
     // Ubah dari 'Pesan' menjadi 'pesanan.index'
 return view('pesanan.Pesan', compact('pesanan', 'daftarKue'));
 }
+
+    // Menampilkan dashboard terpisah (admin)
+    public function dashboard()
+    {
+        $pesanan = Pesanan::all();
+        $total = $pesanan->count();
+        return view('dashboard', compact('pesanan', 'total'));
+    }
+
     // Menampilkan form untuk membuat pesanan baru (Create)
     public function create()
 {

@@ -32,6 +32,7 @@
                 <a href="#menu" class="font-semibold text-gray-700 hover:text-[#522b05] transition">Menu</a>
                 <a href="#about" class="font-semibold text-gray-700 hover:text-[#522b05] transition">Tentang Kami</a>
                 <a href="#contact" class="font-semibold text-gray-700 hover:text-[#522b05] transition">Kontak</a>
+                <a href="{{ route('dashboard') }}" class="font-semibold text-gray-700 hover:text-[#522b05] transition">Dashboard</a>
             </div>
 
             <button @click="open = !open" class="md:hidden focus:outline-none">
@@ -44,7 +45,10 @@
             <a @click="open = false" href="#menu" class="block font-semibold">Menu</a>
             <a @click="open = false" href="#about" class="block font-semibold">Tentang Kami</a>
             <a @click="open = false" href="#contact" class="block font-semibold">Kontak</a>
-            <a href="{{ route('pesanan.create') }}" class="block bg-[#522b05] text-white text-center py-2 rounded-full font-bold">Pesan Sekarang</a>
+            <a @click="open = false" href="{{ route('dashboard') }}" class="block font-semibold">Dashboard</a>
+            @if(app()->environment('local'))
+                <a @click="open = false" href="{{ route('admin.login') }}" class="block font-semibold text-sm">(Admin login)</a>
+            @endif
         </div>
     </nav>
 

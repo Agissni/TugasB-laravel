@@ -16,7 +16,7 @@
                 
                 <select name="kue_pilihan" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" required>
                     @foreach($daftarKue as $k)
-                        <option value="{{ $k->nama }}">{{ $k->nama }}</option>
+                        <option value="{{ $k->nama_kue }}">{{ $k->nama_kue }}</option>
                     @endforeach
                 </select>
 
@@ -31,41 +31,19 @@
             </form>
         </div>
 
-        {{-- BAGIAN 2: TABEL DAFTAR PESANAN --}}
-        <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-amber-700">
-            <h1 class="text-3xl font-bold mb-6 text-gray-800">Daftar Pesanan</h1>
-            <div class="overflow-x-auto">
-                <table class="table-auto w-full border-collapse">
-                    <thead>
-                        <tr class="bg-amber-50"> {{-- Header tabel jadi krem muda --}}
-                            <th class="border px-4 py-2">ID</th>
-                            <th class="border px-4 py-2">Nama Customer</th>
-                            <th class="border px-4 py-2">Kue</th>
-                            <th class="border px-4 py-2">Jumlah</th>
-                            <th class="border px-4 py-2">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($pesanan as $p)
-                        <tr class="text-center hover:bg-gray-50 transition">
-                            <td class="border px-4 py-2">{{ $p->id_pesanan }}</td>
-                            <td class="border px-4 py-2">{{ $p->nama_customer }}</td>
-                            <td class="border px-4 py-2">{{ $p->kue_pilihan }}</td>
-                            <td class="border px-4 py-2">{{ $p->jumlah }}</td>
-                            <td class="border px-4 py-2">
-                               <a href="{{ url('pesanan/' . $p->id_pesanan . '/edit') }}" class="text-amber-600 font-bold hover:underline">Edit</a>
-                                <form action="{{ route('pesanan.destroy', $p->id_pesanan) }}" method="POST" class="inline">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" class="text-red-500 font-bold ml-2 hover:underline" onclick="return confirm('Yakin hapus?')">Hapus</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    @if(session('success'))
+        Swal.fire({
+            title: 'Berhasil!',
+            text: "{{ session('success') }}",
+            icon: 'success',
+            confirmButtonColor: '#fbbf24'
+        });
+    @endif
+</script>
+@endpush
