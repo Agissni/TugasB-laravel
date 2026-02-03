@@ -17,8 +17,8 @@
             <select name="kue_pilihan" class="border rounded w-full py-2 px-3" required>
             <option value="">-- Silahkan Pilih Kue --</option>
             @foreach($daftarKue as $k)
-        {{-- Kita panggil $k->nama karena di database nama kolomnya adalah 'nama_kue' --}}
-             <option value="{{ $k->nama_kue }}">{{ $k->nama_kue }}</option>
+        {{-- Kolom di tabel `tokokue` bernama `nama` — gunakan properti $k->nama --}}
+             <option value="{{ $k->nama }}">{{ $k->nama }}</option>
              @endforeach
             </select>
             

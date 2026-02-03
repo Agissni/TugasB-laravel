@@ -21,8 +21,8 @@
                     <label class="block text-sm font-semibold text-gray-700 mb-1">Kue Pilihan</label>
                     <select name="kue_pilihan" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
                         @foreach($daftarKue as $k)
-                            <option value="{{ $k->nama_kue }}" {{ $pesanan->kue_pilihan == $k->nama_kue ? 'selected' : '' }}>
-                                {{ $k->nama_kue }}
+                            <option value="{{ $k->nama }}" {{ $pesanan->kue_pilihan == $k->nama ? 'selected' : '' }}>
+                                {{ $k->nama }}
                             </option>
                         @endforeach
                     </select>

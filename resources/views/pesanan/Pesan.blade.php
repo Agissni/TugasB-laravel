@@ -16,7 +16,7 @@
                 
                 <select name="kue_pilihan" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" required>
                     @foreach($daftarKue as $k)
-                        <option value="{{ $k->nama_kue }}">{{ $k->nama_kue }}</option>
+                        <option value="{{ $k->nama }}">{{ $k->nama }}</option>
                     @endforeach
                 </select>
 

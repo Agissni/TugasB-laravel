@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Seed data contoh untuk tabel tokokue
+        $this->call([\Database\Seeders\TokokueSeeder::class]);
     }
 }
