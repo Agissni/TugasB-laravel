@@ -15,6 +15,7 @@
                 <input type="text" name="nama_customer" placeholder="Nama Anda" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" required>
                 
                 <select name="kue_pilihan" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" required>
+                    <option value="">-- Silahkan Pilih Kue --</option>
                     @foreach($daftarKue as $k)
                         <option value="{{ $k->nama }}">{{ $k->nama }}</option>
                     @endforeach
