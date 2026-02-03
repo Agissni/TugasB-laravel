@@ -16,7 +16,7 @@ class PesananController extends Controller
     $pesanan = Pesanan::all();
     $daftarKue = DB::table('tokokue')->get();
     // Ubah dari 'Pesan' menjadi 'pesanan.index'
-return view('pesanan.pesan', compact('pesanan', 'daftarKue'));
+return view('pesanan.Pesan', compact('pesanan', 'daftarKue'));
 }
 
     // Menampilkan dashboard terpisah (admin)
