@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-3xl shadow-xl overflow-hidden hover:-translate-y-3 transition-transform duration-300 flex flex-col">
-                    <img src="https://i.pinimg.com/736x/ac/75/fe/ac75fe78dbdf85f6b1a12c705dbd5b7e.jpg" class="w-full h-64 object-cover" alt="Kastangel">
+                    <img src="https://i.pinimg.com/736x/b9/a1/c6/b9a1c67b4e1f2a3f883bbda795a51fb0.jpg" class="w-full h-64 object-cover" alt="Kastangel">
                     <div class="p-8 text-center flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-2xl font-bold text-[#522b05]">Kue Putri Salju</h3>
