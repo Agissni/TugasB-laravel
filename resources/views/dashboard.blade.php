@@ -188,7 +188,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $p->kue_pilihan }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <span class="px-2 py-1 text-xs font-semibold rounded-full {{ $p->ukuran == 'besar' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800' }}">
-                                            {{ ucfirst($p->ukuran ?? 'N/A') }}
+                                            {{ $p->ukuran == 'besar' ? 'Premium' : 'Ori' }}
                                         </span>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $p->jumlah }} box</td>

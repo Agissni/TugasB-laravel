@@ -45,11 +45,11 @@
 
                 {{-- Pilihan Ukuran/Harga --}}
                 <div class="mb-4">
-                    <label class="block text-gray-700 font-bold mb-2">Pilih Ukuran</label>
+                    <label class="block text-gray-700 font-bold mb-2">Pilih Paket</label>
                     <select name="ukuran" x-model="ukuran" @change="updateHarga()" class="border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:shadow-outline" required>
-                        <option value="">-- Pilih Ukuran --</option>
-                        <option value="kecil">Kecil - Rp {{ number_format($kueData->harga_kecil, 0, ',', '.') }}</option>
-                        <option value="besar">Besar - Rp {{ number_format($kueData->harga_besar, 0, ',', '.') }}</option>
+                        <option value="">-- Pilih Paket --</option>
+                        <option value="kecil">Ori - Rp {{ number_format($kueData->harga_kecil, 0, ',', '.') }}</option>
+                        <option value="besar">Premium - Rp {{ number_format($kueData->harga_besar, 0, ',', '.') }}</option>
                     </select>
                     <input type="hidden" name="harga" :value="harga">
                 </div>
