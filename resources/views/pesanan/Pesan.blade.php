@@ -44,10 +44,12 @@
 <script>
     @if(session('success'))
         Swal.fire({
-            title: 'Berhasil!',
+            title: 'Pesanan Berhasil!',
             text: "{{ session('success') }}",
             icon: 'success',
-            confirmButtonColor: '#fbbf24'
+            confirmButtonColor: '#522b05',
+            confirmButtonText: 'OK',
+            timer: 3000
         });
     @endif
 </script>

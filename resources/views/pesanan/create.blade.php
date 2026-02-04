@@ -10,10 +10,12 @@
             ukuran: '',
             harga: 0,
             jumlah: 1,
+            showTotal: false,
             get total() {
                 return this.harga * this.jumlah;
             },
             formatRupiah(angka) {
+                if (angka === 0) return 'Rp 0';
                 return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             },
             updateHarga() {
@@ -22,6 +24,7 @@
                 } else if (this.ukuran === 'besar') {
                     this.harga = this.hargaBesar;
                 }
+                this.showTotal = this.harga > 0;
             }
         }">
             @csrf
@@ -71,10 +74,13 @@
 
             {{-- Total Harga --}}
             @if($selectedKue && $kueData)
-                <div class="mb-4 bg-orange-50 p-4 rounded-lg">
+                <div class="mb-4 bg-orange-50 p-4 rounded-lg border-2 border-orange-200" x-show="showTotal" x-transition>
                     <label class="block text-gray-700 font-bold mb-2">Total Pembayaran</label>
-                    <p class="text-2xl font-bold text-[#522b05]" x-text="formatRupiah(total)">Rp 0</p>
+                    <p class="text-3xl font-bold text-[#522b05]" x-text="formatRupiah(total)">Rp 0</p>
                     <input type="hidden" name="total" :value="total">
+                    <p class="text-sm text-gray-600 mt-2">
+                        <span x-text="formatRupiah(harga)"></span> × <span x-text="jumlah"></span> box
+                    </p>
                 </div>
             @endif
 
@@ -100,4 +106,28 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    @if(session('success'))
+        Swal.fire({
+            title: 'Pesanan Berhasil!',
+            text: "{{ session('success') }}",
+            icon: 'success',
+            confirmButtonColor: '#522b05',
+            confirmButtonText: 'OK'
+        });
+    @endif
+    
+    @if(session('error'))
+        Swal.fire({
+            title: 'Oops!',
+            text: "{{ session('error') }}",
+            icon: 'error',
+            confirmButtonColor: '#522b05',
+            confirmButtonText: 'OK'
+        });
+    @endif
+</script>
+@endpush
 
