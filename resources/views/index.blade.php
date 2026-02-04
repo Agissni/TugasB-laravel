@@ -74,7 +74,7 @@
                             <p class="text-gray-500 mt-2">Nastar klasik dengan butter wisman premium.</p>
                             <p class="text-[#d4a373] font-bold text-xl my-4">Rp 85k - 110k</p>
                         </div>
-                        <a href="{{ route('pesanan.create') }}" class="bg-[#522b05] text-white py-3 rounded-2xl font-bold hover:bg-[#fcb69f] active:bg-[#ffecd2] active:text-[#522b05] transition-all duration-200 shadow-md text-center block">Pesan</a>
+                        <a href="{{ route('pesanan.create', ['kue' => 'Kue Nastar']) }}" class="bg-[#522b05] text-white py-3 rounded-2xl font-bold hover:bg-[#fcb69f] active:bg-[#ffecd2] active:text-[#522b05] transition-all duration-200 shadow-md text-center block">Pesan</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-3xl shadow-xl overflow-hidden hover:-translate-y-3 transition-transform duration-300 flex flex-col">
@@ -85,7 +85,7 @@
                             <p class="text-gray-500 mt-2">Keju edam dan cheddar yang melimpah.</p>
                             <p class="text-[#d4a373] font-bold text-xl my-4">Rp 90k - 120k</p>
                         </div>
-                        <a href="{{ route('pesanan.create') }}" class="bg-[#522b05] text-white py-3 rounded-2xl font-bold hover:bg-[#fcb69f] active:bg-[#ffecd2] active:text-[#522b05] transition-all duration-200 shadow-md text-center block">Pesan</a>
+                        <a href="{{ route('pesanan.create', ['kue' => 'Kue Kastangel']) }}" class="bg-[#522b05] text-white py-3 rounded-2xl font-bold hover:bg-[#fcb69f] active:bg-[#ffecd2] active:text-[#522b05] transition-all duration-200 shadow-md text-center block">Pesan</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-3xl shadow-xl overflow-hidden hover:-translate-y-3 transition-transform duration-300 flex flex-col">
@@ -96,7 +96,7 @@
                             <p class="text-gray-500 mt-2">Lembut, gurih, dan manis yang pas.</p>
                             <p class="text-[#d4a373] font-bold text-xl my-4">Rp 75k - 95k</p>
                         </div>
-                        <a href="{{ route('pesanan.create') }}" class="bg-[#522b05] text-white py-3 rounded-2xl font-bold hover:bg-[#fcb69f] active:bg-[#ffecd2] active:text-[#522b05] transition-all duration-200 shadow-md text-center block">Pesan</a>
+                        <a href="{{ route('pesanan.create', ['kue' => 'Kue Putri Salju']) }}" class="bg-[#522b05] text-white py-3 rounded-2xl font-bold hover:bg-[#fcb69f] active:bg-[#ffecd2] active:text-[#522b05] transition-all duration-200 shadow-md text-center block">Pesan</a>
                     </div>
                 </div>
             </div>

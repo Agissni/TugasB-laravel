@@ -14,7 +14,10 @@ class Pesanan extends Model
     protected $fillable = [
         'nama_customer',
         'kue_pilihan',
+        'ukuran',
+        'harga',
         'jumlah',
+        'total',
         'alamat',
         'no_hp',
     ];

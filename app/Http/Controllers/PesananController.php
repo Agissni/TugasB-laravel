@@ -28,11 +28,18 @@ return view('pesanan.Pesan', compact('pesanan', 'daftarKue'));
     }
 
     // Menampilkan form untuk membuat pesanan baru (Create)
-    public function create()
+    public function create(Request $request)
 {
     $daftarKue = DB::table('tokokue')->get();
-    // Pastikan folder 'pesanan' (huruf kecil) dan file 'create'
-    return view('pesanan.create', compact('daftarKue'));
+    $selectedKue = $request->query('kue'); // Ambil parameter kue dari URL
+    
+    // Cari data kue yang dipilih untuk mendapatkan harga
+    $kueData = null;
+    if ($selectedKue) {
+        $kueData = DB::table('tokokue')->where('nama', $selectedKue)->first();
+    }
+    
+    return view('pesanan.create', compact('daftarKue', 'selectedKue', 'kueData'));
 }
     // Menyimpan pesanan baru (Create)
     public function store(Request $request)
@@ -40,12 +47,15 @@ return view('pesanan.Pesan', compact('pesanan', 'daftarKue'));
         $request->validate([
             'nama_customer' => 'required|string|max:255',
             'kue_pilihan' => 'required|string|max:255',
+            'ukuran' => 'required|string|in:kecil,besar',
+            'harga' => 'required|integer|min:0',
             'jumlah' => 'required|integer|min:1',
+            'total' => 'required|integer|min:0',
             'alamat' => 'required|string',
             'no_hp' => 'required|string|max:20',
         ]);
 
-        Pesanan::create($request->all());  // Diperbaiki dari Pesan
+        Pesanan::create($request->all());
 
         return redirect()->route('pesanan.index')->with('success', 'Pesanan berhasil dibuat!');
     }
